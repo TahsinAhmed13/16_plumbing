@@ -15,6 +15,8 @@ int main()
     mkfifo("control", 0644); 
     int process = open("process", O_WRONLY); 
     int control = open("control", O_RDONLY); 
+    remove("process"); 
+    remove("control"); 
     
     while(1)
     {
